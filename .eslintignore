@@ -1,0 +1,7 @@
+public/
+node_modules
+project/node_modules/
+build/
+dist/
+cli/
+vue.config.js

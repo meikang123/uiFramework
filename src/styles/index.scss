@@ -1,0 +1,302 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: normal;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details,
+figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;    padding: 0;
+}
+
+/* 禁止文本被选中 */
+body {
+  cursor: default;
+  // -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video, .dis_b {
+    display: inline-block; *display: inline; *zoom: 1;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+button, input, select, textarea {
+    font-family: Microsoft YaHei, tahoma, simsun, arial;
+}
+
+input, select, textarea {
+    font-size: 100%;
+}
+
+/* 去除获取焦点后边框 */
+input, textarea, button {
+    outline: none;
+}
+
+/* 去除默认边框 */
+fieldset, img, button {
+    border: 0;
+}
+button {
+    background: transparent;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol, ul, li {
+    list-style: none;
+}
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%; font-weight: 500;
+}
+
+/* 让链接在 hover 状态下不显示下划线 */
+a:hover {
+    text-decoration: none;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+    text-decoration: none;
+}
+
+/* 清理浮动 */
+.fn_clear:after {
+    visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;
+}
+.fn_clear { /* for IE6 IE7 */
+    zoom: 1;
+}
+
+/* 设置内联, 减少浮动带来的bug */
+.fn_left, .fn_right {
+    display: inline;
+}
+.fn_left {
+    float: left;
+}
+.fn_right {
+    float: right;
+}
+
+/* 隐藏, 通常用来与 JS 配合 */
+.fn_hide {
+    display: none;
+}
+
+/* 清除浏览器默认样式 */
+i, em {
+    font-style: normal;
+}
+
+/* 超出文本省略号替代 */
+.text_ellipsis {
+    overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+
+/* 图片缩放 */
+img {
+    width: auto; height: auto; max-width: 100%; max-height: 100%;
+}
+
+.el-table__row{
+  .cell{
+    .el-button{
+      margin-right: 2px;
+    }
+  }
+
+}

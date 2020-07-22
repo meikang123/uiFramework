@@ -1,0 +1,38 @@
+<template>
+  <div>
+    <contentLayout>
+      <div slot="title">Dialog</div>
+      <el-button type="primary" @click="showDialog">点击打开Dialog</el-button>
+      <div class="mdBg markdown-body" v-html="compiledMarkdown"></div>
+    </contentLayout>
+    <gt-dialog :visible.sync="visible" title="提示">
+      这是一段信息
+    </gt-dialog>
+  </div>
+</template>
+<script>
+import readme from '@framework/ui/dialog/README.md';
+export default {
+  name: 'Dialog',
+  components: {},
+  data() {
+    return {
+      visible: false,
+      compiledMarkdown: ''
+    };
+  },
+  created() {
+    this.compiledMarkdown = readme;
+  },
+  methods: {
+    showDialog() {
+      this.visible = true;
+    }
+  }
+};
+</script>
+<style lang="less" scoped>
+.mdBg {
+  margin-top: 20px;
+}
+</style>

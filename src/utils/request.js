@@ -4,10 +4,6 @@ import {
 } from 'element-ui';
 
 import { Config } from '@/config/settings';
-/*
- * 张珊 -- http://192.168.236.201:8787
- * */
-console.log(APP_ENV, '-------APP_ENV');
 
 const BASE_URL = Config[APP_ENV].requestUrl;
 // const BASE_URL = 'http://10.254.56.61:8787' || process.env.VUE_APP_BASE_API;

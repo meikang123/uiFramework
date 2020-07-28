@@ -2,7 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  css:{
+    sourceMap: true
+  },
   configureWebpack: {
+    devtool: 'source-map',
     devServer: {
       port: 9090,
       sockHost: 'http://localhost:9090',

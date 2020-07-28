@@ -1,8 +1,6 @@
 <template>
   <gt-layout>
-    <template slot="logo">
-      <logo />
-    </template>
+    <template slot="logo" />
     <template slot="setting">
       <router-link to="/">
         <el-dropdown-item>其他</el-dropdown-item>

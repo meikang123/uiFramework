@@ -6,7 +6,7 @@
         <p>使用静态数据</p>
       </Subhead>
       <gt-select
-        :defaultOptions="options"
+        :default-options="options"
         v-model="value1"
         :placeholder="'请选择城市'"
       />
@@ -15,7 +15,7 @@
         <p>每次选择时都会请求otpions</p>
       </Subhead>
       <gt-select
-        :requestService="ProductService"
+        :request-service="ProductService"
         v-model="value2"
         :placeholder="'请选择城市'"
       />
@@ -24,13 +24,13 @@
         <p>初始化时请求一次，请求后缓存</p>
       </Subhead>
       <gt-select
-        :useRequestCache="true"
-        :requestService="ProductService"
+        :use-request-cache="true"
+        :request-service="ProductService"
         v-model="value3"
         :placeholder="'请选择城市'"
       />
       <div slot="md">
-        <div class="mdBg markdown-body" v-html="compiledMarkdown"></div>
+        <div class="mdBg markdown-body" v-html="compiledMarkdown" />
       </div>
     </ContentLayout>
   </div>
@@ -38,6 +38,7 @@
 
 <script>
 import readme from '@framework/ui/select/README.md';
+
 export default {
   data() {
     return {
@@ -54,9 +55,9 @@ export default {
           label: '上海'
         }
       ],
-      ProductService: () => {
+      ProductService: () =>
         // mock 接口返回
-        return new Promise((res, rej) => {
+        new Promise((res, rej) => {
           const obj = {
             code: 0,
             data: {
@@ -73,8 +74,8 @@ export default {
             }
           };
           res(obj);
-        });
-      }
+        })
+      
     };
   },
   created() {

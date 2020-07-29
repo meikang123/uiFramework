@@ -1,14 +1,21 @@
 import Layout from '@/layout';
 
-const dialog = () => import(/* webpackChunkName: 'product' */ '@/views/dialog');
-const select = () => import(/* webpackChunkName: 'product' */ '@/views/select');
-// const modulex = () => import (/* webpackChunkName: 'product' */ '@/views/settings/module');
-// const version = () => import (/* webpackChunkName: 'version' */ '@/views/settings/version');
-// const tag = () => import (/* webpackChunkName: 'tag' */ '@/views/settings/tag');
-
+const dialog = () => import(/* webpackChunkName: 'dialog' */ '@/views/dialog');
+const select = () => import(/* webpackChunkName: 'select' */ '@/views/select');
+const index = () => import(/* webpackChunkName: 'index' */ '@/views/index');
 
 export default [
   {
+    path: '/',
+    component: Layout,
+    redirect: '/index',
+    children: [{
+      path: 'index',
+      component: index,
+      name: 'index',
+      meta: { title: '说明', elIcon: 'el-icon-s-home', affix: true }
+    }]
+  }, {
     path: '/dialog',
     component: Layout,
     children: [
@@ -16,7 +23,7 @@ export default [
         path: 'index',
         component: dialog,
         name: 'dialog',
-        meta: { title: 'Dialog', elIcon: 'el-icon-office-building', noCache: true }
+        meta: { title: 'Dialog', elIcon: 'el-icon-menu', noCache: true }
       }
     ]
 
@@ -29,7 +36,7 @@ export default [
         path: 'index',
         component: select,
         name: 'select',
-        meta: { title: 'select', elIcon: 'el-icon-office-building', noCache: true }
+        meta: { title: 'select', elIcon: 'el-icon-menu', noCache: true }
       }
     ]
 

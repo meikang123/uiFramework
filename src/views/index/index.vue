@@ -9,7 +9,9 @@ import Readme from '@framework/README.md';
 export default {
   
   computed: {
-    Readme
+    Readme() {
+      return Readme;
+    }
   }
 };
 </script>

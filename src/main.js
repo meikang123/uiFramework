@@ -2,17 +2,18 @@ import Vue from 'vue';
 import Cookies from 'js-cookie';
 import Element from 'element-ui';
 import gtui from '@framework/ui';
-import CommonComponents from '@/components/common'; // 全局组件
+import components from '@/components'; // 全局组件
 import router from './router';
 import store from './store';
 import * as filters from './filters';
 import App from './App';
+import './permission';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/styles/index.scss'; // 全局样式
 
 
 Vue.use(gtui);
-Vue.use(CommonComponents);
+Vue.use(components);
 Vue.use(Element, {
   size: Cookies.get('size') || 'mini'
 });

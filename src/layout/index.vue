@@ -1,5 +1,7 @@
 <template>
-  <gt-layout />
+  <gt-layout>
+    <template slot="logo" />
+  </gt-layout>
 </template>
 <script>
 import Layout from '@framework/layout';

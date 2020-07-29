@@ -1,16 +1,16 @@
 
-import Subhead from './modules/subhead'
-import ContentLayout from './modules/contentLayout'
+import Subhead from './modules/subhead';
+import ContentLayout from './modules/contentLayout';
 
-const commonComponents = [
+const components = [
   Subhead,
   ContentLayout
-]
+];
 
-const install = (Vue) => {
-  commonComponents.map(v => {
-    Vue.component(v.name, v)
-  })
-}
+const install = Vue => {
+  components.map(v => {
+    Vue.component(v.name, v);
+  });
+};
 
-export default install
+export default install;

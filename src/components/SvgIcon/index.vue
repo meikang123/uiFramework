@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
-    .svg-icon {
-        width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden;
-    }
+  .svg-icon {
+    width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden;
+  }
 </style>
 
 <template>
@@ -16,12 +16,12 @@ export default {
   props: {
     iconClass: {
       type: String,
-      required: true,
+      required: true
     },
     className: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   computed: {
     iconName() {
@@ -32,7 +32,7 @@ export default {
         return `svg-icon ${this.className}`;
       }
       return 'svg-icon';
-    },
-  },
+    }
+  }
 };
 </script>

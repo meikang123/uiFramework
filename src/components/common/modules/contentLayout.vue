@@ -1,11 +1,11 @@
 <template>
   <div style="padding: 30px">
     <div class="titleBg">
-      <slot name="title"></slot>
+      <slot name="title" />
     </div>
-    <slot></slot>
+    <slot />
     <div class="mdBg">
-      <slot name="md"></slot>
+      <slot name="md" />
     </div>
   </div>
 </template>

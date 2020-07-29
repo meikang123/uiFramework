@@ -2,7 +2,7 @@
   <div>
     <div class="subheadBg">{{ title }}</div>
     <div class="contentBg">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

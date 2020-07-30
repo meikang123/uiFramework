@@ -1,11 +1,11 @@
 {
-  "name": "framework",
-  "version": "0.1.0",
+  "name": "framework-case",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "giant-cli-service serve",
     "build": "giant-cli-service build",
-    "local": "giant-cli-service serve --mode local",
+    "local": "giant-cli-service serve --mode local-ip",
     "report": "giant-cli-service build --report",
     "download": "giant download"
   },
@@ -14,6 +14,8 @@
     "brace": "^0.11.1",
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
+    "giant-webpack": "^0.8.4",
+    "html-loader": "^1.1.0",
     "js-cookie": "^2.2.1",
     "mavon-editor": "^2.9.0",
     "normalize.css": "^8.0.1",
@@ -23,13 +25,31 @@
     "screenfull": "^5.0.2",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
-    "vuex": "^3.1.3"
+    "vuex": "^3.1.3",
+    "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
     "@giantx/cli-plugin-babel": "0.0.8",
-    "@giantx/cli-plugin-framework": "0.8.0",
-    "@giantx/cli-service": "0.1.2",
-    "giant-tools": "0.9.2"
+    "@giantx/cli-plugin-framework": "^0.1.3",
+    "@giantx/cli-service": "^0.1.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "@vue/compiler-sfc": "^3.0.0-beta.14",
+    "axios": "^0.19.2",
+    "babel-plugin-jsx-v-model": "^2.0.3",
+    "babel-preset-vue-app": "^2.0.0",
+    "cache-loader": "^4.1.0",
+    "giant-tools": "0.9.8",
+    "html-loader": "^1.1.0",
+    "less-loader": "^6.1.1",
+    "markdown-loader": "^5.1.0",
+    "marked": "^1.1.1",
+    "mavon-editor": "^2.9.0",
+    "svg-sprite-loader": "^4.2.7",
+    "ts-loader": "7.0.5",
+    "typescript": "^3.9.5",
+    "vue-template-compiler": "^2.0.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "engines": {
     "node": ">= 12.18.2",

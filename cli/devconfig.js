@@ -7,5 +7,5 @@ const context = path.join(__dirname, '..');
 const cliService = new CliService(context);
 cliService.init('development');
 const config = cliService.resolveWebpackConfig();
-
+console.log(config, '----config');
 module.exports = config;

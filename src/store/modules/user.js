@@ -1,6 +1,6 @@
 import { goLogin, goLogout } from '@/api/user';
 import { defaultRoutes } from '@/router/index';
-import { isArrayEqu } from '@/utils/base'
+import { isArrayEqu } from '@/utils/base';
 
 /*
 * 获取登录信息
@@ -17,13 +17,13 @@ const delToken = () => {
 /*
 * 设置登录信息
 * */
-const setToken = (info) => {
+const setToken = info => {
   window.localStorage.setItem('token', info);
 };
 
 function hasPermission(roles, route) {
   if (route.meta && route.meta.roles) {
-    return roles.some((role) => route.meta.roles.includes(role));
+    return roles.some(role => route.meta.roles.includes(role));
   }
   return true;
 }
@@ -33,7 +33,7 @@ function hasPermission(roles, route) {
 * */
 const filterRoutes = (routes, roles) => {
   const res = [];
-  routes.forEach((route) => {
+  routes.forEach(route => {
     if (hasPermission(roles, route)) {
       if (route.children) {
         route.children = filterRoutes(route.children, roles);
@@ -50,7 +50,7 @@ const state = {
   token: getToken(),
   info: {}, // 用户信息
   roles: null,
-  routes: [],
+  routes: []
 };
 
 const mutations = {
@@ -61,17 +61,17 @@ const mutations = {
   SET_ROUTES: (state, routes) => {
     state.routes = routes;
   },
-  SET_ROLES: (state) => {
+  SET_ROLES: state => {
     state.roles = ['admin'];
     // state.roles = [];
-  },
+  }
 };
 
 const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo;
     return new Promise((resolve, reject) => {
-      goLogin({ name: username, password }).then((res) => {
+      goLogin({ name: username, password }).then(res => {
         if (res.code === 0) {
           setToken(JSON.stringify(res.data));
           commit('CHANGE_USER', res.data);
@@ -79,14 +79,14 @@ const actions = {
         } else {
           reject(res);
         }
-      }).catch((error) => {
+      }).catch(error => {
         reject(error);
       });
     });
   },
   logout({ commit }) {
     return new Promise((resolve, reject) => {
-      goLogout().then((res) => {
+      goLogout().then(res => {
         if (res.code === 0) {
           delToken();
           commit('CHANGE_USER', {});
@@ -94,7 +94,7 @@ const actions = {
         } else {
           reject(res);
         }
-      }).catch((error) => {
+      }).catch(error => {
         reject(error);
       });
     });
@@ -109,17 +109,18 @@ const actions = {
   generateRoutes({ commit }) {
     return new Promise((resolve, reject) => {
       !isArrayEqu(state.routes, defaultRoutes) && commit('SET_ROUTES', defaultRoutes);
+      console.log(defaultRoutes, '----defaultRoutes');
       // const addRoute = filterRoutes(authRoutes, state.roles);
       commit('SET_ROUTES', defaultRoutes);
       // resolve(addRoute || []);
       resolve();
     });
-  },
+  }
 };
 
 export default {
   namespaced: true,
   state,
   mutations,
-  actions,
+  actions
 };

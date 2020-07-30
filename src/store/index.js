@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { commonGetters, commonModules } from '@framework/store';
 import getters from './getters';
+
 
 Vue.use(Vuex);
 
@@ -14,6 +16,13 @@ const modules = modulesFiles.keys().reduce((modulesItem, modulePath) => {
 }, {});
 
 export default new Vuex.Store({
-  modules,
-  getters
+  modules: {
+    ...commonModules,
+    ...modules
+  },
+  
+  getters: {
+    ...commonGetters,
+    ...getters
+  }
 });

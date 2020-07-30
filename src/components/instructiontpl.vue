@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'GtInstructionTpl',
+  name: 'InstructionTpl',
   props: {
     title: {
       type: String,

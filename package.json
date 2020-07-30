@@ -1,6 +1,6 @@
 {
-  "name": "autotester",
-  "version": "0.1.0",
+  "name": "framework-case",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "giant-cli-service serve",
@@ -38,7 +38,7 @@
     "babel-plugin-jsx-v-model": "^2.0.3",
     "babel-preset-vue-app": "^2.0.0",
     "cache-loader": "^4.1.0",
-    "giant-tools": "0.9.2",
+    "giant-tools": "0.9.8",
     "html-loader": "^1.1.0",
     "less-loader": "^6.1.1",
     "markdown-loader": "^5.1.0",

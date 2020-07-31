@@ -1,44 +1,26 @@
 import Layout from '@/layout';
 
-const dialog = () => import(/* webpackChunkName: 'dialog' */ '@/views/dialog');
-const select = () => import(/* webpackChunkName: 'select' */ '@/views/select');
-const index = () => import(/* webpackChunkName: 'index' */ '@/views/index');
+const dialog = () => import(/* webpackChunkName: 'dialog' */ '@/views/ui/dialog');
+const select = () => import(/* webpackChunkName: 'select' */ '@/views/ui/select');
 
 export default [
   {
-    path: '/',
+    path: '/ui',
     component: Layout,
-    redirect: '/index',
-    children: [{
-      path: 'index',
-      component: index,
-      name: 'index',
-      meta: { title: '说明', elIcon: 'el-icon-s-home', affix: true }
-    }]
-  }, {
-    path: '/dialog',
-    component: Layout,
+    meta: { title: 'ui', elIcon: 'el-icon-sunny' },
     children: [
       {
-        path: 'index',
+        path: 'dialog',
         component: dialog,
         name: 'dialog',
-        meta: { title: 'Dialog', elIcon: 'el-icon-menu', noCache: true }
-      }
-    ]
-
-  },
-  {
-    path: '/select',
-    component: Layout,
-    children: [
+        meta: { title: 'gt-dialog', elIcon: 'el-icon-sunny', noCache: true }
+      },
       {
-        path: 'index',
+        path: 'select',
         component: select,
         name: 'select',
-        meta: { title: 'select', elIcon: 'el-icon-menu', noCache: true }
+        meta: { title: 'gt-select', elIcon: 'el-icon-sunny', noCache: true }
       }
     ]
-
   }
 ];

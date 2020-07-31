@@ -1,10 +1,12 @@
 
 import Subhead from './subhead';
-import InstructionTpl from './instructiontpl';
+import InstructionTpl from './InstructionTpl/Instruction';
+import CaseItem from './InstructionTpl/CaseItem';
 
 const components = [
   Subhead,
-  InstructionTpl
+  InstructionTpl,
+  CaseItem
 ];
 
 const install = Vue => {

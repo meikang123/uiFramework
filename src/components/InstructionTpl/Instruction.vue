@@ -1,6 +1,6 @@
 <template>
   <div class="instruction-tpl">
-    <div class="instruction-tpl__title">
+    <div class="instruction-tpl__title" v-if="title">
       {{ title }}
     </div>
     <slot />
@@ -10,7 +10,7 @@
           <slot name="left" />
         </div>
       </el-col>
-      <el-col :span="12">
+      <el-col :span="12" v-if="hasRightSolt">
         <div class="instruction-tpl__demo">
           <div class="tpl-demos__title"> 示例：</div>
           <slot name="right" />
@@ -29,8 +29,13 @@ export default {
       default: ''
     }
   },
-  created() {
-    console.log(this.$slots, '----this.$slots');
+  computed: {
+    hasRightSolt: {
+      get() {
+        const { right } = this.$slots;
+        return !!right;
+      }
+    }
   }
 };
 </script>

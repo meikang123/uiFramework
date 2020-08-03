@@ -1,5 +1,5 @@
 <template>
-  <instruction-tpl title="gt-dialog">
+  <instruction-tpl>
     <template slot="left">
       <gt-markdown-display :content="compiledMarkdown" />
     </template>

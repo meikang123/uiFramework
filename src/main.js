@@ -11,7 +11,7 @@ import App from './App';
 import './permission';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/styles/index.scss'; // 全局样式
-
+import './icons';
 
 Vue.use(gtui);
 Vue.use(components);

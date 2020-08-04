@@ -27,7 +27,7 @@ export const defaultRoutes = [{
     path: 'index',
     component: index,
     name: 'index',
-    meta: { title: '说明', elIcon: 'el-icon-sunny', affix: true }
+    meta: { title: '说明', affix: true }
   }]
 }, {
   path: '/404',

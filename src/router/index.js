@@ -13,17 +13,21 @@ import Layout from '@/layout';
 const routeFiles = require.context('./modules', true, /\.js$/);
 const configRoutes = Transform.configRoutesToRoutes(routeFiles);
 
+const index = () => import(/* webpackChunkName: 'index' */ '@/views/index');
+
 Vue.use(VueRouter);
 /*
  * 路由配置
  * */
 export const defaultRoutes = [{
-  path: '/redirect',
+  path: '/',
   component: Layout,
-  hidden: true,
+  redirect: '/index',
   children: [{
-    path: '/redirect/:path(.*)',
-    component: () => import('@/views/redirect/index')
+    path: 'index',
+    component: index,
+    name: 'index',
+    meta: { title: '说明', affix: true }
   }]
 }, {
   path: '/404',

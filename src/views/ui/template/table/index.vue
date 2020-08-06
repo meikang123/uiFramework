@@ -4,7 +4,7 @@
   </instruction-tpl>
 </template>
 <script>
-import readme from '@framework/ui/template/table/README.md';
+import readme from '@framework/ui/template/table/_README.md';
 
 export default {
   data() {

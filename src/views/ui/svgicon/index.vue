@@ -14,7 +14,7 @@
   </instruction-tpl>
 </template>
 <script>
-import readme from '@framework/ui/svgicon/README.md';
+import readme from '@framework/ui/_svgicon/README.md';
 
 export default {
   data() {

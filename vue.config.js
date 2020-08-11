@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
+const isProd = process.env.NODE_ENV === 'production'
+console.log(isProd, '---isProd');
 
 module.exports = {
   css:{
@@ -11,13 +13,7 @@ module.exports = {
       port: 9090,
       sockHost: 'http://localhost:9090',
       disableHostCheck: true
-    },
-    plugins: [
-      new webpack.DefinePlugin({
-        APP_ENV: JSON.stringify(process.env.APP_ENV) || JSON.stringify('development')
-      })
-
-    ]
+    }
   },
 
   chainWebpack: config => {

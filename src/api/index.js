@@ -1,19 +1,21 @@
-import request from '@/utils/request';
+const contextFiles = require.context('.', false, /\.js$/);
+const ServiceMap = {};
+contextFiles.keys().forEach(key => {
+  if (key === './index.js') {
+    return;
+  }
+  const serviceName = key.replace(/\.\//, '').replace(/_?\.js$/, '');
+  ServiceMap[serviceName] = contextFiles(key).default;
+});
 
-// eslint-disable-next-line import/prefer-default-export
-export const ShoesService = {
-  /**
-    * @description 获取订单信息
-    */
-  getList: data => request.get('/v1/shoes', { params: data }),
-  /**
-    * @description 批量更新订单信息
-    */
-  update: data => request.put('/v1/shoes', data),
-  /**
-    * @description 导出订单信息
-    */
-  download: data => request.get('/v1/shoes/export', { params: data })
+const Api = ServiceMap;
+
+export {
+  Api
 };
 
-export const api = {};
+export default {
+  install(Vue) {
+    Vue.prototype.$api = ServiceMap;
+  }
+};

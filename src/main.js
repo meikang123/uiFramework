@@ -19,17 +19,31 @@ Vue.use(markdown); // 每个页面都有用，所以全局注册
 Vue.use(Element, {
   size: Cookies.get('size') || 'mini'
 });
+
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);
 });
+
 Vue.config.productionTip = false;
 
+Vue.mixin({
+  computed: {
+    Enums() {
+      return this.$store.state.dict.enums;
+    }
+  },
+  methods: {
+    getEnum() {
+      //
+    }
+  }
+});
 
 new Vue({
   router,
   store,
-  created() { },
+  created() {
+    this.$store.dispatch('dict/getDict');
+  },
   render: h => h(App)
 }).$mount('#app');
-
-window.Vue = Vue;

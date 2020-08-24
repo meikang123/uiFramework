@@ -44,6 +44,10 @@ export const defaultRoutes = [{
   hidden: true
 }].concat(...configRoutes);
 
+export const authRoutes = [
+ 
+];
+
 
 const router = new VueRouter({
   mode: 'history',

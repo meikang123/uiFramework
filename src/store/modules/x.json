@@ -1,0 +1,114 @@
+{
+  "code": 0,
+  "data": {
+    "config": {
+      "brand": {
+        "1": "耐克",
+        "2": "李宁",
+        "3": "Vans",
+        "4": "飞跃",
+        "5": "AJ",
+        "6": "匡威"
+      },
+      "supplier": {
+        "1": "巨猿",
+        "2": "飞跃",
+        "3": "soda"
+      },
+      "warehouse": {
+        "1": "巨人仓-线上",
+        "10": "备用仓库4",
+        "2": "巨人仓-直播",
+        "3": "大货仓",
+        "4": "直播仓",
+        "5": "备用仓",
+        "6": "回力飞跃仓",
+        "7": "备用仓库1",
+        "8": "备用仓库2",
+        "9": "备用仓库3"
+      }
+    },
+    "dict": {
+      "channels": [
+        {
+          "code": 2,
+          "name": "直播活动",
+          "alias": "ChannelLive"
+        },
+        {
+          "code": 3,
+          "name": "兑换活动",
+          "alias": "ChannelExchange"
+        },
+        {
+          "code": 1,
+          "name": "游戏活动",
+          "alias": "ChannelGame"
+        }
+      ],
+      "operate_log_type": [
+        {
+          "code": 3,
+          "name": "订单",
+          "alias": "OperateLogOrder"
+        },
+        {
+          "code": 1,
+          "name": "商品",
+          "alias": "OperateLogProduct"
+        },
+        {
+          "code": 2,
+          "name": "库存",
+          "alias": "OperateLogStorage"
+        }
+      ],
+      "order_source": [
+        {
+          "code": 0,
+          "name": "球鞋活动",
+          "alias": "SourceApp"
+        },
+        {
+          "code": 1,
+          "name": "球鞋直播",
+          "alias": "SourceLive"
+        }
+      ],
+      "product_status": [
+        {
+          "code": 1,
+          "name": "未发布",
+          "alias": "ProductStatusInit"
+        },
+        {
+          "code": 2,
+          "name": "已上架",
+          "alias": "ProductStatusOnline"
+        },
+        {
+          "code": 3,
+          "name": "已下架",
+          "alias": "ProductStatusOffline"
+        }
+      ],
+      "storage_status": [
+        {
+          "code": 1,
+          "name": "有货",
+          "alias": "StorageAvailable"
+        },
+        {
+          "code": 2,
+          "name": "无货",
+          "alias": "StorageLack"
+        },
+        {
+          "code": 3,
+          "name": "超卖",
+          "alias": "StorageOverSale"
+        }
+      ]
+    }
+  }
+}

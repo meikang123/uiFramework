@@ -50,8 +50,6 @@ export const defaultRoutes = [{
 export const authRoutes = [
 ].concat(...defaultRoutes).concat(...configRoutes);
 
-console.log(authRoutes, '----authRoutes');
-
 const router = new VueRouter({
   mode: 'history',
   scrollBehavior: () => ({

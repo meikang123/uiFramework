@@ -1,6 +1,6 @@
 import Layout from '@/layout';
 
-const layout = () => import(/* webpackChunkName: 'dialog' */ '@/views/layout');
+const layout = () => import(/* webpackChunkName: 'baseLayout' */ '@/views/layout');
 
 export default [
   {

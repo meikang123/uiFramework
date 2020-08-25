@@ -3,9 +3,9 @@ import {
   Message
 } from 'element-ui';
 
-import { Config } from '@/config/settings';
+import { Settings } from '@/config';
 
-const BASE_URL = Config[APP_ENV].requestUrl;
+const BASE_URL = Settings[APP_ENV].requestUrl;
 // const BASE_URL = 'http://10.254.56.61:8787' || process.env.VUE_APP_BASE_API;
 // const BASE_URL = 'http://192.168.246.90:8787' || process.env.VUE_APP_BASE_API;
 // const BASE_URL = 'http://192.168.189.71:8787'; // 内网打包地址

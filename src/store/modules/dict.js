@@ -1,6 +1,6 @@
 import { Enum, Transform } from '@framework/utils';
 import { FormPageModeEnum } from '@framework/enums';
-import { Config } from '@/config/settings';
+import { Settings } from '@/config';
 
 const dictsToFrontendEnums = dicts => {
   const enums = {};
@@ -19,7 +19,7 @@ export default {
   namespaced: true,
   state: {
     enums: null,
-    config: Config.assistConfig
+    config: Settings.assistConfig
   },
   mutations: {
     SET_DICT: (_state, enums) => {

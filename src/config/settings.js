@@ -1,8 +1,9 @@
 /**
  * @description 基础配置
  */
-export const Config = {
-
+export default {
+  
+  title: '架构文档',
   /**
    * @description 开发联调环境
    * http://192.168.236.201:8787 张珊
@@ -39,6 +40,5 @@ export const Config = {
     requestUrl: 'http://192.168.96.75:8787',
     wsUrl: '//192.168.96.75:8787'
   }
-};
 
-export const abc = {};
+};

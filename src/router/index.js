@@ -42,19 +42,22 @@ export const defaultRoutes = [{
   path: '*',
   redirect: '/404',
   hidden: true
-}].concat(...configRoutes);
+}];
 
+/**
+ * 动态添加路由
+ */
 export const authRoutes = [
- 
-];
+].concat(...defaultRoutes).concat(...configRoutes);
 
+console.log(authRoutes, '----authRoutes');
 
 const router = new VueRouter({
   mode: 'history',
   scrollBehavior: () => ({
     y: 0
   }),
-  routes: defaultRoutes
+  routes: authRoutes
 });
 
 export default router;

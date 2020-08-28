@@ -94,7 +94,7 @@ export const authRoutes = [
 ].concat(...defaultRoutes).concat(..._routes);
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   scrollBehavior: () => ({
     y: 0
   }),

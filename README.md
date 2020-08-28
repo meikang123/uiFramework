@@ -1,6 +1,8 @@
 自动化测试前端部分
 ======
 
+[dome](https://meikang123.github.io/uiFramework/dist/#/index)
+
 ## init
 
 ```shell
